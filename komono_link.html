@@ -3,93 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>小物商品一覧 | TOKUNO processing shop</title>
+  <title>小物商品一覧</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .product-img {
-      height: 200px;
-      object-fit: cover;
-    }
-    .product-card {
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .btn-cart {
-      background-color: #28a745;
-      color: white;
-    }
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container py-5">
-    <h2 class="mb-4 text-center">小物商品一覧</h2>
+  <div class="container py-4">
+    <h1 class="text-center mb-4">小物商品一覧</h1>
     <div class="row g-4">
-      <!-- 商品1 -->
+      <!-- 商品 1 -->
       <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/pouch1.jpg" class="card-img-top product-img" alt="ポーチ1">
+        <div class="card h-100">
+          <img src="https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0510/users/c9cf2396e9b50784cef3d36abcdc2e96aa2b88de/i-img1200x900-1729051721297yidxme.jpg" class="card-img-top" alt="ポーチ">
           <div class="card-body">
-            <h5 class="card-title">花柄ポーチ</h5>
-            <p class="card-text">やさしい花柄デザインで収納力も抜群。</p>
+            <h5 class="card-title">小物系ポーチ</h5>
+            <p class="card-text">ポーチ、巾着袋、手帳ケースなど日常生活で使える商品がここに。</p>
             <p class="fw-bold">$45</p>
-            <a href="cart.html?product=komono1" class="btn btn-cart">カートに追加</a>
+            <button class="btn btn-success add-to-cart" data-name="小物系ポーチ" data-price="45">カートに追加</button>
           </div>
         </div>
       </div>
 
-      <!-- 商品2 -->
+      <!-- 商品 2 -->
       <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/pouch2.jpg" class="card-img-top product-img" alt="ポーチ2">
-          <div class="card-body">
-            <h5 class="card-title">レザー巾着袋</h5>
-            <p class="card-text">高級感のあるレザー仕上げ。プレゼントにも最適。</p>
-            <p class="fw-bold">$55</p>
-            <a href="cart.html?product=komono2" class="btn btn-cart">カートに追加</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 商品3 -->
-      <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/notebook.jpg" class="card-img-top product-img" alt="手帳ケース">
-          <div class="card-body">
-            <h5 class="card-title">手帳ケース</h5>
-            <p class="card-text">しっかりとした縫製でビジネスにも最適な一品。</p>
-            <p class="fw-bold">$60</p>
-            <a href="cart.html?product=komono3" class="btn btn-cart">カートに追加</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 商品4 -->
-      <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/pencilcase.jpg" class="card-img-top product-img" alt="ペンケース">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="ペンケース">
           <div class="card-body">
             <h5 class="card-title">和柄ペンケース</h5>
-            <p class="card-text">伝統的な和柄が特徴のスタイリッシュな一品。</p>
-            <p class="fw-bold">$35</p>
-            <a href="cart.html?product=komono4" class="btn btn-cart">カートに追加</a>
+            <p class="card-text">丈夫な布で作られた和柄のペンケース。実用的かつおしゃれ。</p>
+            <p class="fw-bold">$20</p>
+            <button class="btn btn-success add-to-cart" data-name="和柄ペンケース" data-price="20">カートに追加</button>
           </div>
         </div>
       </div>
 
-      <!-- 商品5 -->
+      <!-- 商品 3 -->
       <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/coinpouch.jpg" class="card-img-top product-img" alt="コインケース">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="キーケース">
           <div class="card-body">
-            <h5 class="card-title">ミニコインケース</h5>
-            <p class="card-text">コンパクトで便利、ちょっとした外出に。</p>
-            <p class="fw-bold">$30</p>
-            <a href="cart.html?product=komono5" class="btn btn-cart">カートに追加</a>
+            <h5 class="card-title">レザーキーケース</h5>
+            <p class="card-text">上質な革を使用したキーケース。長く愛用できる逸品。</p>
+            <p class="fw-bold">$35</p>
+            <button class="btn btn-success add-to-cart" data-name="レザーキーケース" data-price="35">カートに追加</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品 4 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="手帳カバー">
+          <div class="card-body">
+            <h5 class="card-title">布製手帳カバー</h5>
+            <p class="card-text">ノートやスケジュール帳をスタイリッシュに保護。</p>
+            <p class="fw-bold">$28</p>
+            <button class="btn btn-success add-to-cart" data-name="布製手帳カバー" data-price="28">カートに追加</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品 5 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="ティッシュケース">
+          <div class="card-body">
+            <h5 class="card-title">ミニティッシュケース</h5>
+            <p class="card-text">外出先でも便利。カバンにすっぽり入るサイズ。</p>
+            <p class="fw-bold">$18</p>
+            <button class="btn btn-success add-to-cart" data-name="ミニティッシュケース" data-price="18">カートに追加</button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- 購入・商品一覧へのボタン -->
+    <div class="text-center mt-5">
+      <a href="cart.html" class="btn btn-success me-3">購入手続きへ</a>
+      <a href="tokuno.html" class="btn btn-secondary">商品一覧へ</a>
+    </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.add-to-cart');
+      buttons.forEach(button => {
+        button.addEventListener('click', function () {
+          const name = this.getAttribute('data-name');
+          const price = parseFloat(this.getAttribute('data-price'));
+          const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+          const existingItem = cart.find(item => item.name === name);
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push({ name, price, quantity: 1 });
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert(`${name} をカートに追加しました`);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
