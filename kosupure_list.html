@@ -3,95 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>コスプレ商品一覧 | TOKUNO processing shop</title>
+  <title>コスプレ商品一覧</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .product-img {
-      height: 200px;
-      object-fit: cover;
-    }
-    .product-card {
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .btn-cart {
-      background-color: #28a745;
-      color: white;
-    }
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container py-5">
-    <h2 class="mb-4 text-center">コスプレ商品一覧</h2>
+  <div class="container py-4">
+    <h1 class="text-center mb-4">コスプレ商品一覧</h1>
     <div class="row g-4">
-
-      <!-- 商品1 -->
+      <!-- 商品 1 -->
       <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/cos1.jpg" class="card-img-top product-img" alt="コスプレ1">
+        <div class="card h-100">
+          <img src="https://i.ibb.co/NGGmYg8/IMG-2231.jpg" class="card-img-top" alt="衣装セット">
           <div class="card-body">
-            <h5 class="card-title">メイド服セット</h5>
-            <p class="card-text">フリルたっぷりのメイドスタイル。丁寧な縫製と柔らかい素材。</p>
-            <p class="fw-bold">$120</p>
-            <a href="cart.html?product=cos1" class="btn btn-cart">カートに追加</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 商品2 -->
-      <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/cos2.jpg" class="card-img-top product-img" alt="コスプレ2">
-          <div class="card-body">
-            <h5 class="card-title">学生制服風衣装</h5>
-            <p class="card-text">アニメ風のデザインで、文化祭や撮影会にも最適。</p>
-            <p class="fw-bold">$140</p>
-            <a href="cart.html?product=cos2" class="btn btn-cart">カートに追加</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 商品3 -->
-      <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/cos3.jpg" class="card-img-top product-img" alt="コスプレ3">
-          <div class="card-body">
-            <h5 class="card-title">戦闘キャラ風衣装</h5>
-            <p class="card-text">本格素材で仕上げた高耐久コスプレセット。</p>
-            <p class="fw-bold">$180</p>
-            <a href="cart.html?product=cos3" class="btn btn-cart">カートに追加</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 商品4 -->
-      <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/cos4.jpg" class="card-img-top product-img" alt="コスプレ4">
-          <div class="card-body">
-            <h5 class="card-title">魔法少女衣装</h5>
-            <p class="card-text">カラフルで可愛い！撮影映え抜群の一着。</p>
-            <p class="fw-bold">$160</p>
-            <a href="cart.html?product=cos4" class="btn btn-cart">カートに追加</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 商品5 -->
-      <div class="col-md-4">
-        <div class="card product-card">
-          <img src="https://example.com/cos5.jpg" class="card-img-top product-img" alt="コスプレ5">
-          <div class="card-body">
-            <h5 class="card-title">アイドル風ステージ衣装</h5>
-            <p class="card-text">ステージ映えする華やかなデザイン。完全オーダーメイド可能！</p>
+            <h5 class="card-title">オリジナル衣装セット</h5>
+            <p class="card-text">完全オーダーメイドのコスチュームセット。サイズや素材は相談可能。</p>
             <p class="fw-bold">$200</p>
-            <a href="cart.html?product=cos5" class="btn btn-cart">カートに追加</a>
+            <button class="btn btn-success add-to-cart" data-name="オリジナル衣装セット" data-price="200">カートに追加</button>
           </div>
         </div>
       </div>
 
+      <!-- 商品 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="ウィッグ">
+          <div class="card-body">
+            <h5 class="card-title">高品質ウィッグ</h5>
+            <p class="card-text">リアルな質感と耐熱性を備えたウィッグ。カスタムカットも可能。</p>
+            <p class="fw-bold">$50</p>
+            <button class="btn btn-success add-to-cart" data-name="高品質ウィッグ" data-price="50">カートに追加</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品 3 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="小道具セット">
+          <div class="card-body">
+            <h5 class="card-title">武器＆小道具セット</h5>
+            <p class="card-text">軽量素材で作られた武器と小道具。塗装・装飾もご相談ください。</p>
+            <p class="fw-bold">$120</p>
+            <button class="btn btn-success add-to-cart" data-name="武器＆小道具セット" data-price="120">カートに追加</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品 4 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="アクセサリー">
+          <div class="card-body">
+            <h5 class="card-title">コスプレ用アクセサリー</h5>
+            <p class="card-text">イヤリング、ネックレス、ヘッドドレスなど豊富に取り揃え。</p>
+            <p class="fw-bold">$30</p>
+            <button class="btn btn-success add-to-cart" data-name="コスプレ用アクセサリー" data-price="30">カートに追加</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品 5 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="ブーツカバー">
+          <div class="card-body">
+            <h5 class="card-title">ブーツカバー（伸縮性あり）</h5>
+            <p class="card-text">市販の靴の上から装着可能。サイズ調整も柔軟に対応。</p>
+            <p class="fw-bold">$40</p>
+            <button class="btn btn-success add-to-cart" data-name="ブーツカバー" data-price="40">カートに追加</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 購入・商品一覧へのボタン -->
+    <div class="text-center mt-5">
+      <a href="cart.html" class="btn btn-success me-3">購入手続きへ</a>
+      <a href="tokuno.html" class="btn btn-secondary">商品一覧へ</a>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.add-to-cart');
+      buttons.forEach(button => {
+        button.addEventListener('click', function () {
+          const name = this.getAttribute('data-name');
+          const price = parseFloat(this.getAttribute('data-price'));
+          const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+          const existingItem = cart.find(item => item.name === name);
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push({ name, price, quantity: 1 });
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert(`${name} をカートに追加しました`);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
