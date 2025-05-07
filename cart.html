@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ショッピングカート</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .cart-table th, .cart-table td {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ TOKUNO ナビゲーションバー -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="TOKUNO.html">TOKUNO processing shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="TOKUNO.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Catalog page</a></li>
+          <li class="nav-item"><a class="nav-link active" href="cart.html">Shopping cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="inquiry.html">Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🛒 カート内容 -->
+  <div class="container py-5">
+    <h1 class="mb-4">ショッピングカート</h1>
+    <div class="table-responsive">
+      <table class="table cart-table">
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>数量</th>
+            <th>価格</th>
+            <th>小計</th>
+            <th>削除</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- JavaScriptで商品が追加されます -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-end fs-5 mb-3">
+      <strong>合計金額: <span id="total-price">0</span> $</strong>
+    </div>
+
+    <!-- ✅ ボタン -->
+    <div class="d-flex justify-content-center gap-4 my-5">
+      <a href="checkout.html" class="btn btn-success btn-lg px-5 py-2">購入手続きへ</a>
+      <a href="TOKUNO.html" class="btn btn-primary btn-lg px-5 py-2">商品ページへ</a>
+    </div>
+  </div>
+
+  <!-- ✅ スクリプト -->
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById('cart-items');
+      const totalPriceEl = document.getElementById('total-price');
+      cartItems.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<tr><td colspan="5" class="text-center">カートに商品がありません。</td></tr>';
+        totalPriceEl.textContent = '0';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>
+            <input type="number" min="1" value="${item.quantity}" class="form-control form-control-sm quantity-input" data-index="${index}" />
+          </td>
+          <td>$${item.price}</td>
+          <td>$${subtotal.toFixed(2)}</td>
+          <td>
+            <button class="btn btn-danger btn-sm delete-btn" data-index="${index}">削除</button>
+          </td>
+        `;
+        cartItems.appendChild(row);
+      });
+
+      totalPriceEl.textContent = total.toFixed(2);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCart();
+
+      document.getElementById('cart-items').addEventListener('click', (e) => {
+        if (e.target.classList.contains('delete-btn')) {
+          const index = e.target.getAttribute('data-index');
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.splice(index, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          loadCart();
+        }
+      });
+
+      document.getElementById('cart-items').addEventListener('change', (e) => {
+        if (e.target.classList.contains('quantity-input')) {
+          const index = e.target.getAttribute('data-index');
+          const newQty = parseInt(e.target.value);
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          if (newQty > 0) {
+            cart[index].quantity = newQty;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
